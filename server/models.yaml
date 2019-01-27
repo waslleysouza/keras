@@ -1,0 +1,29 @@
+swagger: "2.0"
+
+info:
+  title: Dogs vs Cats Model REST API
+  version: "1.0"
+
+paths:
+  /dogsvscats/classify:
+    post:
+      summary: Classify Dogs and Cats
+      description: Generates a message from a post, such as curl -F file=@sample.png http://localhost:5000/dogsvscats/classify
+      operationId: dogsvscats.post_image
+      consumes:
+        - multipart/form-data
+      produces:
+        - text/json;
+      responses:
+        200:
+          description: Classification response
+          schema:
+            type: string
+          examples:
+            "text/json": "{animal: dog}"
+      parameters:
+        - name: file
+          in: formData
+          description: Image file to classify as a dog or cat.
+          required: true
+          type: file

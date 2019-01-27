@@ -1,0 +1,7 @@
+connexion[swagger-ui]
+keras
+tensorflow-gpu
+Pillow
+numpy
+h5py
+tornado
